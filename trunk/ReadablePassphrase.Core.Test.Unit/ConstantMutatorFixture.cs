@@ -193,7 +193,7 @@ namespace MurrayGrant.ReadablePassphrase
                 // An previous mutator may/not have written something at the end with no following whitespace
                 var sb = new StringBuilder(input + endWhiteSpace);
                 //  The constant mutator is placed after the ending whitespace
-                var expected = $"{input}{endWhiteSpace}{mutChar}";
+                var expected = $"{input}{mutChar}{endWhiteSpace}";
 
                 var sut = new ConstantMutator
                 {
@@ -223,7 +223,7 @@ namespace MurrayGrant.ReadablePassphrase
                 // An previous mutator may/not have written something at the end with no following whitespace
                 var sb = new StringBuilder(input + endWhiteSpace);
                 //  The constant mutator is placed after the ending whitespace
-                var expected = $"{input}{endWhiteSpace}{mutChar}";
+                var expected = $"{input}{mutChar}{endWhiteSpace}";
 
                 var rnd = new Mock<IRandomSourceBase>();
                 //  Fix the random gen to always return the end index
